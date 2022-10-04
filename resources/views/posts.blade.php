@@ -5,10 +5,9 @@
     @foreach ($posts as $post)
         <article class="mb-5 p-5">
             <h2>
-                <a href="/posts/{{ $post["slug"] }}">{{ $post["title"] }}</a>
+                <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
             </h2>
-            <p>By: {{ $post["author"] }}</p>
-            <p>{{ $post["body"] }}</p>
+            <p>{{ $post->body }}</p>
         </article>
     @endforeach
 
