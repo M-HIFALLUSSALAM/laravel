@@ -4,7 +4,7 @@
 
 <article>
     <h2>{{ $post->title }}</h2>
-    {{ $post->body }}
+    {!! $post->body !!}
 </article>
 
 <a href="/blog">Back to Posts</a>
