@@ -4,6 +4,9 @@
 
 <article>
     <h2>{{ $post->title }}</h2>
+
+    <p>By. Hifal In <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+
     {!! $post->body !!}
 </article>
 
