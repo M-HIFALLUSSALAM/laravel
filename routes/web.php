@@ -41,7 +41,7 @@ Route::get('/blog', [PostControler::class, 'index']);
 Route::get('posts/{post:slug}', [PostControler::class, 'show']);
 
 Route::get('/categories', function() {
-    return view('cetegories', [
+    return view('categories', [
         'title' => 'Post Categories',
         'categories' => Category::all()
     ]);
