@@ -11,7 +11,7 @@
             <h3>{{ $nama }}</h3>
             <p>{{ $bio }}</p>
             <p>{{ $email }}</p>
-            <img src="img/{{ $image }}" alt="burung1.jpg" width="400">
+            <img src="img/{{ $image }}" alt="burung1.jpg" class="img-fluid">
 
         </div>
     </div>
