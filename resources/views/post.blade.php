@@ -2,14 +2,25 @@
 
 @section('container')
 
-<article>
-    <h2>{{ $post->title }}</h2>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">{{ $post->title }}</h2>
 
-    <p>By. <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> In <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+            <p>By. <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> In <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
 
-    {!! $post->body !!}
-</article>
+            <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid" alt="">
+            
+            <article class="my-3">
+                {!! $post->body !!}
+            </article>
 
-<a href="/blog">Back to Posts</a>
+            <br><br>
+            <a href="/blog">Back to Posts</a>
+        </div>
+    </div>
+</div>
+
+
 
 @endsection
