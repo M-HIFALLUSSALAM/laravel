@@ -7,7 +7,7 @@
 @if ($posts->count())
 
 <div class="card mb-3 m-5">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
     <div class="card-body text-center">
       <h3 class="card-title">{{ $posts[0]->title }}</h3>
 
@@ -28,16 +28,35 @@
     <p class="text-center fs-4">No Post Found.</p>
 @endif
 
-@foreach ($posts as $post)
-        <article class="p-3 m-5 rounded shadow">
-            <h2>
-                <a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a>
-            </h2>
-            <p>By. <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> In <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
-            <p>{{ $post->excerpt }}</p>
 
-            <a href="/posts/{{ $post->slug }}" class="text-decoration-none">read More...</a>
-        </article>
-    @endforeach
+<div class="container-fluid">
+  <div class="row m-4">
+
+@foreach ($posts->skip(1) as $post)
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card">
+        <div class="position-absolute p-2 text-white rounded" style="background-color: rgba(0, 0, 0, 0.7)"><a href="">{{ $post->category->name }}</a></div>
+        <img src="https://source.unsplash.com/500x350?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ $post->title }}</h5>
+          <p>
+            <small class="text-muted">
+              By. <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
+            </small>
+          </p>
+          <p class="card-text">{{ $post->excerpt }}</p>
+          <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+
+    </div>
+
+@endforeach
+
+  </div>
+</div>
+
 
 @endsection
