@@ -5,7 +5,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col col-md-8 text-center offset-md-2 shadow boder-rounded p-5">
+        <div class="col col-md-8 text-center offset-md-2 shadow rounded p-5" style="background-color: rgba(255, 255, 0, 0.527)">
 
             <h1>Halaman about</h1>
             <h3>{{ $nama }}</h3>
