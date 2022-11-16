@@ -2,7 +2,18 @@
 
 @section('container')
 
-<h2 class="m-5">{{ $title }}</h2>
+<h2 class="text-center m-5">{{ $title }}</h2>
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <form action="/posts">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search..." name="search">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 @if ($posts->count())
 
