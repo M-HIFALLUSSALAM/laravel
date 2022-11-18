@@ -27,7 +27,7 @@
 
     <p>
       <small class="text-muted">
-        By. <a href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> In <a href="/posts?category={{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+        By. <a href="/posts?author{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> In <a href="/blog?category={{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
       </small>
     </p>
 
@@ -57,7 +57,7 @@
           <h5 class="card-title">{{ $post->title }}</h5>
           <p>
             <small class="text-muted">
-              By. <a href="/posts?category={{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
+              By. <a href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
             </small>
           </p>
           <p class="card-text">{{ $post->excerpt }}</p>
